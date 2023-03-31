@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Nunito&family=Nunito+Sans:wght@400;600&family=Poppins:ital,wght@0,400;0,500;1,300;1,400&family=Questrial&family=Raleway&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b6bec4;
+  border-radius: 0.4rem;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url("../public/Questrial-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "Questrial", sans-serif;
+  font-family: myFont;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.toggle-btn.active .dot {
+  @apply translate-x-6;
+}
+
+.form * {
+  @apply dark:!border-slate-700;
 }
